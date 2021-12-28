@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import Home from './compenents/Home';
+import Player from './compenents/Player'
 
 // ========== my pages ==========
 class App extends Component {
@@ -16,7 +17,8 @@ class App extends Component {
       <Router>
         <div>
           <Routes>
-            <Route exact path="/" element= {<Home/>}/>
+            <Route exact path="/" element= {<Home/>} />
+            <Route path="/player" element= {<Player/>} />
           </Routes>
         </div>
       </Router>

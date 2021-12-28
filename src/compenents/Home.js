@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './Home';
+import './Home.css';
 
 class Home extends Component {
     render() {
@@ -35,7 +35,7 @@ class Home extends Component {
                                                 <span className="icon">
                                                     <i className="fa fa-superpowers"></i>
                                                 </span>
-                                                <span>Examples</span>
+                                                <span>Other thing i should change</span>
                                             </a>
                                         </span>
                                     </div>
@@ -57,7 +57,7 @@ class Home extends Component {
                                 <div className="box">
                                     <div className="field is-grouped">
                                         <p className="control is-expanded">
-                                            <input className="input" type="text" placeholder="Enter your email" />
+                                            <input className="input" type="text" placeholder="Put in your ign ..." />
                                         </p>
                                         <p className="control">
                                             <a className="button is-info">
