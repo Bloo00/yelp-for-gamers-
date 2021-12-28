@@ -12,7 +12,7 @@ class Home extends Component {
                             <div className="container">
                                 <div className="navbar-brand">
                                     <a className="navbar-item" href="../">
-                                        <img src="http://bulma.io/images/bulma-type-white.png" alt="Logo" />
+                                        <img src="https://cdn.discordapp.com/attachments/913089466917339146/925517362407555092/FF.GG_3.png" alt="Logo" />
                                     </a>
                                     <span className="navbar-burger burger" data-target="navbarMenu">
                                         <span></span>
@@ -38,22 +38,6 @@ class Home extends Component {
                                                 <span>Examples</span>
                                             </a>
                                         </span>
-                                        <span className="navbar-item">
-                                            <a className="button is-white is-outlined" href="#">
-                                                <span className="icon">
-                                                    <i className="fa fa-book"></i>
-                                                </span>
-                                                <span>Documentation</span>
-                                            </a>
-                                        </span>
-                                        <span className="navbar-item">
-                                            <a className="button is-white is-outlined" href="https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/landing.html">
-                                                <span className="icon">
-                                                    <i className="fa fa-github"></i>
-                                                </span>
-                                                <span>View Source</span>
-                                            </a>
-                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -63,11 +47,12 @@ class Home extends Component {
                     <div className="hero-body">
                         <div className="container has-text-centered">
                             <div className="column is-6 is-offset-3">
-                                <h1 className="title">
-                                    Coming Soon
-                                </h1>
+                                <img src='https://cdn.discordapp.com/attachments/913089466917339146/925518866812121158/FF.GG_Logo.png' alt='Logo' />
+                                {/* <h1 className="title">
+                                    FF.GG
+                                </h1> */}
                                 <h2 className="subtitle">
-                                    $this is the best software platform for running an internet business. We handle billions of dollars every year for forward-thinking businesses around the world.
+                                    Wanna see if your team member is a toxic butt licker?!?
                                 </h2>
                                 <div className="box">
                                     <div className="field is-grouped">
@@ -76,7 +61,7 @@ class Home extends Component {
                                         </p>
                                         <p className="control">
                                             <a className="button is-info">
-                                                Notify Me
+                                                .GG
                                             </a>
                                         </p>
                                     </div>
