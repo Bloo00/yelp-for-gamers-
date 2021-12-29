@@ -12,7 +12,7 @@ class Home extends Component {
                             <div className="container">
                                 <div className="navbar-brand">
                                     <a className="navbar-item" href="../">
-                                        <img src="https://cdn.discordapp.com/attachments/913089466917339146/925517362407555092/FF.GG_3.png" alt="Logo" />
+                                        <img src="https://cdn.discordapp.com/attachments/913089466917339146/925571217061208074/Mini_LOGO.png" alt="Logo" />
                                     </a>
                                     <span className="navbar-burger burger" data-target="navbarMenu">
                                         <span></span>
@@ -54,18 +54,20 @@ class Home extends Component {
                                 <h2 className="subtitle">
                                     Wanna see if your team member is a toxic butt licker?!?
                                 </h2>
-                                <div className="box">
-                                    <div className="field is-grouped">
-                                        <p className="control is-expanded">
-                                            <input className="input" type="text" placeholder="Put in your ign ..." />
-                                        </p>
-                                        <p className="control">
-                                            <a className="button is-info">
-                                                .GG
-                                            </a>
-                                        </p>
+                                <form>
+                                    <div className="box">
+                                        <div className="field is-grouped">
+                                            <p className="control is-expanded">
+                                                <input className="input" type="text" placeholder="Put in your ign ..." />
+                                            </p>
+                                            <p className="control">
+                                                <a href='/player' className="button is-info">
+                                                    .GG
+                                                </a>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
