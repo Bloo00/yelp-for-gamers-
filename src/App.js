@@ -8,6 +8,7 @@ import {
 
 import Home from './compenents/Home';
 import Player from './compenents/Player'
+import E404 from './compenents/404'
 
 // ========== my pages ==========
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
           <Routes>
             <Route exact path="/" element= {<Home/>} />
             <Route path="/player" element= {<Player/>} />
+            <Route path="/404" element={<E404/>} />
           </Routes>
         </div>
       </Router>

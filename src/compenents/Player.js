@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './Player.css';
 
+import PlayerCard from "./PlayerCards";
+
+
+
 class Player extends Component {
     render() {
         return (
