@@ -1,6 +1,56 @@
 import React, { Component } from "react";
 
+import Comment from "./comments";
+import UserName from "./username";
+
+const data = [];
+
 class PlayerCards extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: []
+        };
+    }
+    displayComments() {
+        const display = this.state.comments.map((c, idx) => {
+            return <Comment key={idx} comments={c.comments} username={c.username} />
+        })
+        return display;
+    }
+
+    handleComment = (e) => {
+        e.preventDefault();
+        let messageValue = e.target.value;
+        console.log("message", messageValue);
+
+        this.setState({
+            comment: messageValue,
+        });
+        console.log("state", this.state.comment);
+    };
+
+
+    // displayRateings() {
+    //     const display = this.state.rating.map((c, idx) => {
+    //         return <Comment key={idx} message={c.rating} username={c.username} />
+    //     })
+    //     return display;
+    // }
+
+    // handleRateings() {
+    //     this.setState({
+    //         rating: this.state.rating + 1,
+    //     });
+    // }
+
+    displayUsername() {
+        const display = this.state.username.map((c, idx) => {
+            return <Comment key={idx} message={c.username} username={c.username} />
+        })
+        return display;
+    }
+
     render() {
         return (
             <div className="column is-9">

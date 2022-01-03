@@ -4,9 +4,9 @@ import './Player.css';
 
 import PlayerCard from "./PlayerCards";
 
-let comments = []
+let comments = [];
 let username = String;
-let rating = int;
+let rating = Number;
 
 
 
@@ -14,7 +14,9 @@ class Player extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            comments : String,
+            username : String,
+            rating : Number
         };
     }
     componentDidMount() {
@@ -25,6 +27,16 @@ class Player extends Component {
             .catch((err) => {
                 console.log("error getting api", err);
             })
+    }
+    displayPlayerCards() {
+        const display = this.state.data.map((a, idx) => {
+            return <PlayerCard
+            key={idx}
+            comments={a.comments}
+            rating={a.rating}
+            />
+        })
+        return display;
     }
 
     render() {
@@ -91,6 +103,7 @@ class Player extends Component {
                                     <i class="is-large fab fa-discord"></i>
                                     {/* should be username */}
                                     <i class="title">Change to user name</i>
+                                    {/* should be rating */}
                                     <h3 class="subtitle">
                                         
                                     </h3>
@@ -143,8 +156,9 @@ class Player extends Component {
                                                 team and enemy team
                                             </div>
                                         </article>
-                                        <pre><code class="language-javascript">Dont know i want to keep em</code></pre>
+                                        <pre><code class="language-javascript">Dont know i want to keep em</code></pre>    
                                     </div>
+                                    
                                     <div class="box">
                                         <h4 id="let" class="title is-3">let</h4>
                                         <article class="message is-primary">
