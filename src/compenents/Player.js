@@ -4,9 +4,29 @@ import './Player.css';
 
 import PlayerCard from "./PlayerCards";
 
+let comments = []
+let username = String;
+let rating = int;
+
 
 
 class Player extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: []
+        };
+    }
+    componentDidMount() {
+        axios.get('http://localhost:3000/playercard')
+            .then((response) => {
+                console.log(response.data)
+            })
+            .catch((err) => {
+                console.log("error getting api", err);
+            })
+    }
+
     render() {
         return (
             <>
