@@ -7,9 +7,9 @@ class Rateing extends Component {
     render() {
         return (
             <>
-                <h3 class="subtitle">{this.props.comment}</h3>
+                <h3 class="subtitle">{this.props.rateing}</h3>
             </>
         )
     }
 }
-export default Rateing;
+export default Rateing; 

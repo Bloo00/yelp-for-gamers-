@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class UserName extends Component {
     constructor(props) {
         super(props);
+        this.state.username = props.username;
     }
     render() {
         return (

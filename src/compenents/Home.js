@@ -57,20 +57,22 @@ class Home extends Component {
                                 <h2 className="subtitle">
                                     Wanna see if your team member is a toxic butt licker?!?
                                 </h2>
-                                <form>
+
+                                <form action='/player' method='get'>
                                     <div className="box">
                                         <div className="field is-grouped">
                                             <p className="control is-expanded">
-                                                <input className="input" type="text" placeholder="Put in your ign ..." />
+                                                <input className="input" name="username"type="text" placeholder="Put in your ign ..." />
                                             </p>
                                             <p className="control">
-                                                <a href='/player' className="button is-info">
+                                                <button className="button is-info">
                                                     .GG
-                                                </a>
+                                                </button>
                                             </p>
                                         </div>
                                     </div>
                                 </form>
+
                             </div>
                         </div>
                     </div>

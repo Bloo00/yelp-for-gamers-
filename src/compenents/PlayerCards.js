@@ -1,20 +1,16 @@
 import React, { Component } from "react";
 
-import Comment from "./comments";
-import UserName from "./username";
+import Comment from "./Comments";
+import Rateing from "./Rateing";
 
-const data = [];
 
 class PlayerCards extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            data: []
-        };
     }
     displayComments() {
         const display = this.state.comments.map((c, idx) => {
-            return <Comment key={idx} comments={c.comments} username={c.username} />
+            return <Comment key={idx} comments={c.comments} />
         })
         return display;
     }
@@ -31,31 +27,24 @@ class PlayerCards extends Component {
     };
 
 
-    // displayRateings() {
-    //     const display = this.state.rating.map((c, idx) => {
-    //         return <Comment key={idx} message={c.rating} username={c.username} />
-    //     })
-    //     return display;
-    // }
-
-    // handleRateings() {
-    //     this.setState({
-    //         rating: this.state.rating + 1,
-    //     });
-    // }
-
-    displayUsername() {
-        const display = this.state.username.map((c, idx) => {
-            return <Comment key={idx} message={c.username} username={c.username} />
+    displayRateings() {
+        const display = this.state.rating.map((c, idx) => {
+            return <Rateing key={idx} message={c.rating}/>
         })
         return display;
     }
 
+    handleRateings() {
+
+        this.setState({
+            rating: this.state.rating + 1,
+        });
+    }
+
     render() {
         return (
-            <div className="column is-9">
                 <div className="content is-medium">
-                    <h3 className="title is-3">thingy mabober to change</h3>
+                    <h3 className="title is-3">hihi i think this is </h3>
                     <div className="box">
                         <h4 id="const" className="title is-3">Game type</h4>
                         <article className="message is-primary">
@@ -73,7 +62,6 @@ class PlayerCards extends Component {
                         <pre><code className="language-javascript">Dont know i want to keep em</code></pre>
                     </div>
                 </div>
-            </div>
         );
     }
 }

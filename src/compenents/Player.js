@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Player.css';
+import { Redirect } from 'react-router-dom';
 
 import PlayerCard from "./PlayerCards";
 
@@ -13,19 +14,23 @@ let rating = Number;
 class Player extends Component {
     constructor(props) {
         super(props);
+        console.log(this.props," hihihihihi");
+        const urlParams = new URLSearchParams(window.location.search);
         this.state = {
-            comments : String,
-            username : String,
-            rating : Number
+            data: [],
+            username: urlParams.get("username")
         };
     }
     componentDidMount() {
-        axios.get('http://localhost:3000/playercard')
+        console.log("im running");
+        axios.get('http://localhost:3000/playercard?username=' + this.state.username)
             .then((response) => {
-                console.log(response.data)
+                console.log(response.data , "anything");
+                
             })
             .catch((err) => {
                 console.log("error getting api", err);
+                window.location.href="/404";
             })
     }
     displayPlayerCards() {
@@ -37,6 +42,14 @@ class Player extends Component {
             />
         })
         return display;
+    }
+    displayUserName() {
+        const display = this.state.data.map((a, idx) => {
+            return <PlayerCard
+            key={idx}
+            username={a.username}
+            />
+        })
     }
 
     render() {
@@ -102,7 +115,7 @@ class Player extends Component {
                                     {/*  have user profile icon here */}
                                     <i class="is-large fab fa-discord"></i>
                                     {/* should be username */}
-                                    <i class="title">Change to user name</i>
+                                    {/* {this.displayUserName()} */}
                                     {/* should be rating */}
                                     <h3 class="subtitle">
                                         
@@ -121,7 +134,7 @@ class Player extends Component {
                             <div class="column is-3">
                                 <aside class="is-medium menu">
                                     <p class="menu-label">
-                                    Should be a for current season ranked or flex ranked
+                                    Game Type
                                     </p>
                                     <ul class="menu-list">
                                         <li class="is-right"><a href="#const" class="is-active"><i ></i> Norms</a></li>
@@ -140,51 +153,8 @@ class Player extends Component {
                                 </aside>
                             </div>
                             <div class="column is-9">
-                                <div class="content is-medium">
-                                    <h3 class="title is-3">thingy mabober to change</h3>
-                                    <div class="box">
-                                        <h4 id="const" class="title is-3">Game type</h4>
-                                        <article class="message is-primary">
-                                            <span class="icon has-text-primary">
-                                                <i class="fab fa-js"></i>
-                                            </span>
-                                            <div class="message-body">
-                                                Should have a card with game type character icon 
-                                                <br/> 
-                                                kda
-                                                <br/>
-                                                team and enemy team
-                                            </div>
-                                        </article>
-                                        <pre><code class="language-javascript">Dont know i want to keep em</code></pre>    
-                                    </div>
-                                    
-                                    <div class="box">
-                                        <h4 id="let" class="title is-3">let</h4>
-                                        <article class="message is-primary">
-                                            <span class="icon has-text-primary">
-                                                <i class="fas fa-info-circle"></i>
-                                            </span>
-                                            <div class="message-body">
-                                                Block-scoped. Can be re-assigned.
-                                            </div>
-                                        </article>
-                                        <pre><code class="language-javascript">let i = 0;</code></pre>
-                                    </div>
-                                    <h3 class="title is-3">More to Come...</h3>
-                                    <div class="box">
-                                        <h4 id="lorem" class="title is-4">More to come...</h4>
-                                        <article class="message is-primary">
-                                            <span class="icon has-text-primary">
-                                                <i class="fas fa-info-circle"></i>
-                                            </span>
-                                            <div class="message-body">
-                                                Lorem ipsum dolor sit amet, mea ne viderer veritus menandri, id scaevola gloriatur instructior sit.
-                                            </div>
-                                        </article>
-                                        <pre><code class="language-javascript">let i = 0;</code></pre>
-                                    </div>
-                                </div>
+                                {this.displayPlayerCards()}
+                                
                             </div>
                         </div>
                     </div>
